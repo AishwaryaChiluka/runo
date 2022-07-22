@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="note"
+            type="com.example.runo.Note" />
+    </data>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="3dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        >
+
+        <!--text view for displaying our note text-->
+        <TextView
+            android:id="@+id/idTVNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:layout_toLeftOf="@id/idIVDelete"
+            android:padding="4dp"
+            android:text="@{note.noteTitle}"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <!--text view for displaying our last updated text-->
+        <TextView
+            android:id="@+id/idTVDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idTVNote"
+            android:layout_margin="3dp"
+            android:text="@{note.noteDescription}"
+            android:layout_toLeftOf="@id/idIVDelete"
+            android:padding="4dp"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:id="@+id/lv_createDt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idTVDate"
+            android:layout_toLeftOf="@id/idIVDelete"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Created By"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:padding="4dp"
+                />
+
+            <TextView
+                android:id="@+id/idCreatedDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:padding="4dp"
+                android:text="@{note.createdBy}"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_toLeftOf="@id/idIVDelete"
+            android:layout_below="@id/lv_createDt"
+            android:visibility="gone"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Updated By"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:padding="4dp"
+                />
+            <TextView
+                android:id="@+id/idUpdatedDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:text='@{note.updatedBy != null ? note.updatedBy : ""}'
+                android:padding="4dp"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!--imageview for displaying delete icon-->
+        <ImageView
+            android:id="@+id/idIVDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="3dp"
+            android:padding="3dp"
+            android:src="@drawable/ic_baseline_delete_24"
+            />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+</layout>

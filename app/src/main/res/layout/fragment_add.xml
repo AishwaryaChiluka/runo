@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="item"
+            type="com.example.runo.Note" />
+    </data>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--edit text for note title-->
+    <EditText
+        android:id="@+id/idAddNoteName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Enter Note Title"
+        android:textColorHint="@color/white" />
+
+    <!--edit text for note description-->
+    <EditText
+        android:id="@+id/idAddNoteDesc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/saveNotesBtn"
+        android:layout_below="@id/idAddNoteName"
+        android:layout_margin="10dp"
+        android:gravity="start|top"
+        android:hint="Enter your Note Details"
+        android:inputType="textMultiLine"
+        android:singleLine="false"
+
+     />
+
+    <!--button for saving and updating a note-->
+    <Button
+        android:id="@+id/saveNotesBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/blue"
+        android:text="@string/save"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
+</RelativeLayout>
+</layout>
